@@ -9,7 +9,6 @@
 ///
 /// \param p1, p2, p3  Соответственно 1, 2, 3 контрольные точки   
 /// \param count	   Количество точек из которых будет состоять кривая
-///
 ////////////////////////////////////////////////////////////
 sf::VertexArray getBezierCoords(sf::Vector2f p1, sf::Vector2f p2, sf::Vector2f p3, int count = 3);
 
