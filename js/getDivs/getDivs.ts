@@ -7,18 +7,13 @@ export default function getDivs(n: number): number[] {
    else if (n === 1) return [1];
    else if (n < 0) n = -n;
 
-   const lim = Math.sqrt(n);
    const divs = [1, n];
 
-   for (let d = 2; d <= lim; d++) {
+   for (let d = 2; d <= Math.sqrt(n); d++) {
       if (n % d !== 0) continue;
 
       divs.push(d);
       divs.push(n / d);
-   }
-
-   if (n % lim === 0) {
-      divs.push(lim);
    }
 
    return divs;
