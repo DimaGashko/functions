@@ -10,7 +10,7 @@ export default function getDivs(n: number): number[] {
    const lim = Math.sqrt(n);
    const divs = [1, n];
 
-   for (let d = 2; d < lim; d++) {
+   for (let d = 2; d <= lim; d++) {
       if (n % d !== 0) continue;
 
       divs.push(d);
