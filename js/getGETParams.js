@@ -1,21 +1,16 @@
-/**
- * Returns the object of GET parameters
- * 
- * Return object format:
- * {
- *    promName: value,
- * }
- */
-export default function getGETParams() {
-    var search = location.search.slice(1);
-    var result = {};
+/** @returns {Map<string, string>} */
+export function getGetParams() {
+    const search = location.search.slice(1);
+    const getParams = new Map();
 
-    if (!search) return result;
+    if (!search) {
+        return getParams;
+    }
 
-    search.split('&').forEach(function (item) {
-        var component = item.split('=', 2);
-        result[component[0]] = decodeURI(component[1]);
+    search.split('&').forEach((item) => {
+        const [key, val] = item.split('=', 2);
+        getParams.set(key, decodeURI(val));
     });
 
-    return result;
+    return getParams;
 }
